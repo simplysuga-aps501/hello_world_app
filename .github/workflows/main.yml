@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Move Code to Staging
+      - name: Staging
         run: |
           git checkout main  # Switch to the development branch
           git checkout -b staging  # Create and switch to the staging branch
