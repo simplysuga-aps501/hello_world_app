@@ -1,0 +1,21 @@
+name: Move Code to Staging
+
+on:
+  push:
+    branches:
+      - main  # Replace 'dev' with your development branch name
+
+jobs:
+  move_to_staging:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Move Code to Staging
+        run: |
+          git checkout main  # Switch to the development branch
+          git checkout -b staging  # Create and switch to the staging branch
+          git push origin staging  # Push the staging branch to GitHub
+
